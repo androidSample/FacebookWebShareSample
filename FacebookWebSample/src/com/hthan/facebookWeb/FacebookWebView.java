@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.webkit.CookieSyncManager;
 import android.webkit.WebSettings;
@@ -27,11 +28,9 @@ public class FacebookWebView extends WebView {
 	private Context mContext;
 	private static String mAccessToken = null;
 	private static long mAccessExpires = 0;
-	public FacebookWebView(Context context) {
+	public FacebookWebView(Context context, AttributeSet attrs) {
+		super(context, attrs);
 		// TODO Auto-generated constructor stub
-		super(context);
-		CookieSyncManager.createInstance(context);
-		init(context);
 		mContext = context;
 	}
 
@@ -48,6 +47,8 @@ public class FacebookWebView extends WebView {
 	}
 
 	public void start(String[] permissions, DialogListener dialogListener) {
+		CookieSyncManager.createInstance(mContext);
+		init(mContext);
 		this.dialogListener = dialogListener;
 		new FBTask(permissions).execute();
 	}

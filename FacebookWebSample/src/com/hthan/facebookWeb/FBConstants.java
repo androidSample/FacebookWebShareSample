@@ -2,7 +2,7 @@ package com.hthan.facebookWeb;
 
 public class FBConstants {
 
-	public static final String APPID = "YOUR FACEBOOK APPID";
+	public static final String APPID = "137800933039629";
 	public static final String DIALOG_BASE_URL = "https://m.facebook.com/dialog/";
 	public static final String GRAPH_BASE_URL = "https://graph.facebook.com/";
 	public static final String RESTSERVER_URL = "https://api.facebook.com/restserver.php";
